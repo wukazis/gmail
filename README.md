@@ -72,6 +72,40 @@ Content-Type: application/json
 GET /test-connection
 ```
 
+
+下面是各参数的含义（用在 /fetch-code 和 /search-emails）：
+
+
+✅ /fetch-code
+
+{
+  "target_email": "user@example.com",
+  "hours_back": 1
+}
+
+• target_email
+要查验证码的目标收件人邮箱（邮件发送到谁）
+• hours_back
+回查的时间范围（单位：小时）
+例如 1 = 只查最近 1 小时的邮件
+如果没找到验证码，可以改成 6、12
+
+✅ /search-emails
+
+{
+  "query": "from:openai.com newer_than:1h",
+  "max_results": 10
+}
+
+• query
+Gmail 搜索语法（和 Gmail 网页搜索一样）
+常用示例：  • from:openai.com newer_than:1h → 最近 1 小时来自 openai.com (http://openai.com/)
+  • to:user@example.com newer_than:12h → 最近 12 小时发给 user@example.com
+  • subject:验证码 newer_than:6h → 主题含“验证码”
+
+• max_results
+最多返回多少封邮件 ID（默认 10）
+
 ## 🏗️ 架构
 
 ```
