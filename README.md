@@ -77,12 +77,12 @@ GET /test-connection
 
 
 ✅ /fetch-code
-
+```http
 {
   "target_email": "user@example.com",
   "hours_back": 1
 }
-
+```
 • target_email
 要查验证码的目标收件人邮箱（邮件发送到谁）
 • hours_back
@@ -91,15 +91,16 @@ GET /test-connection
 如果没找到验证码，可以改成 6、12
 
 ✅ /search-emails
-
+```http
 {
   "query": "from:openai.com newer_than:1h",
   "max_results": 10
 }
-
+```
 • query
 Gmail 搜索语法（和 Gmail 网页搜索一样）
-常用示例：  • from:openai.com newer_than:1h → 最近 1 小时来自 openai.com (http://openai.com/)
+常用示例：  
+  • from:openai.com newer_than:1h → 最近 1 小时来自 openai.com (http://openai.com/)
   • to:user@example.com newer_than:12h → 最近 12 小时发给 user@example.com
   • subject:验证码 newer_than:6h → 主题含“验证码”
 
