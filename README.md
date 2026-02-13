@@ -72,23 +72,10 @@ Content-Type: application/json
 GET /test-connection
 ```
 
-## ⚠️ 安全提醒
-
-1. **不要提交敏感文件**: `credentials.json` 和 `token.json` 包含敏感信息，不应提交到公开仓库
-2. **设置文件权限**: 上传后设置适当的文件权限
-3. **使用HTTPS**: 生产环境建议配置SSL证书
-4. **API密钥**: 考虑添加API密钥认证
-
-## 💰 成本估算
-
-- VPS服务器: $5-10/月 (1GB RAM)
-- 流量费用: 几乎可忽略
-- 总成本: 约 $5-10/月
-
 ## 🏗️ 架构
 
 ```
-中国本地客户端 → 外网服务器 → Gmail API → 返回验证码
+   本地客户端 → 外网服务器 → Gmail API → 返回验证码
      ↓              ↓
   混合获取器    Gmail API服务器
      ↓              ↓
@@ -99,9 +86,7 @@ GET /test-connection
 
 查看 [server_deployment_guide.md](server_deployment_guide.md) 获取完整的部署指南。
 
-## 🤝 贡献
 
-欢迎提交Issue和Pull Request！
 
 ## 📄 许可证
 
